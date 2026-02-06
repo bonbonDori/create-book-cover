@@ -33,6 +33,7 @@ export default function BufferPage() {
                 onMouseLeave={() => setIsHovered(false)}
               >
                 <div className='text-[16px]'>编辑封面</div>
+                {/* @ts-expect-error BOS */}
                 <GoIcon fill={isHovered ? 'white' : 'black'} />
               </div>
             </div>
