@@ -1,26 +1,41 @@
 import './App.css'
-import { HeroUIProvider } from "@heroui/react";
+
+import { Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import routes from './router/index.ts';
+
+import { HeroUIProvider } from "@heroui/react";
+import { ThemeProvider } from '@mui/material/styles';
+import theme from './theme';
+
+import LoadPage from "./pages/load"
 
 function App() {
 
   return (
-    <HeroUIProvider>
-      <>
+    <ThemeProvider theme={theme}>
+      <HeroUIProvider>
         <Router>
           <Routes>
-            {routes.map((route, index) => (
+            {routes.map((route) => (
               <Route
-                key={index}
+                key={route.path}
                 path={route.path}
-                element={<route.component />}
+                element={
+                  <Suspense fallback={
+                    <div>
+                      <LoadPage />
+                    </div>
+                  }>
+                    <route.component />
+                  </Suspense>
+                }
               />
             ))}
           </Routes>
         </Router>
-      </>
-    </HeroUIProvider>
+      </HeroUIProvider>
+    </ThemeProvider>
   )
 }
 
