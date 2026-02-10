@@ -14,11 +14,11 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-col gap-3 text-[14px]">
-            <div className="text-[#9CA3AF] font-bold">
+            <div className="text-[#c0c8d4] font-bold">
               LINKS
             </div>
 
-            <div className="flex flex-col gap-1 color-[#000] font-normal">
+            <div className="flex flex-col gap-1 text-black font-normal">
               <div
                 className="cursor-pointer"
               >

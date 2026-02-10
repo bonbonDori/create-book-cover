@@ -4,10 +4,8 @@ export const customTheme = createTheme({
   palette: {
     primary: {
       // 主色
-      main: '#fff',
+      main: '#000000',
       contrastText: '#fff',
-      // dark: 这将从 palette.primary.main 中进行计算，
-      // dark: '#bebebe',
     },
     secondary: {
       // 次色
@@ -19,9 +17,9 @@ export const customTheme = createTheme({
       styleOverrides: {
         root: {
           // 修改聚焦状态下的边框颜色
-          '& .Mui-focused .MuiOutlinedInput-notchedOutline': {
+          '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
             // 聚焦框颜色
-            borderColor: '#fff',
+            borderColor: '#000',
             borderWidth: '2px',
           },
           // 可选：修改下拉箭头的颜色

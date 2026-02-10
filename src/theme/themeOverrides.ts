@@ -7,7 +7,7 @@ export const themeOverrides: ThemeOptions = {
         root: {
           '& .MuiInputBase-root': {
             // 输入框背景色
-            backgroundColor: '#e5e5e5',
+            // backgroundColor: '#e5e5e5',
           },
         },
       },
