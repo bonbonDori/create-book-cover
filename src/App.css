@@ -1,7 +1,5 @@
 @import "tailwindcss";
-@plugin './hero.ts';
 
-@source '../../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
 /* @custom-variant dark (&:is(.dark *)); */
 
 :root {
@@ -29,16 +27,8 @@ body {
   background-image:
     linear-gradient(to right, #ECECEC 1px, transparent 1px),
     linear-gradient(to bottom, #ECECEC 1px, transparent 1px);
-  background-size: 180px 180px;
+  background-size: 120px 120px;
   background-position: center center;
-  -webkit-mask-image:
-    linear-gradient(to bottom, transparent, #fff 70px calc(100% - 70px), transparent),
-    linear-gradient(to right, transparent, #fff 70px calc(100% - 70px), transparent);
-  mask-image:
-    linear-gradient(to bottom, transparent, #fff 70px calc(100% - 70px), transparent),
-    linear-gradient(to right, transparent, #fff 70px calc(100% - 70px), transparent);
-  mask-composite: intersect;
-  -webkit-mask-composite: source-in, xor;
 
   color: #000;
   min-height: 100vh;
@@ -59,7 +49,7 @@ body {
 
 /*滚动条轨道*/
 ::-webkit-scrollbar-track {
-  background-color: rgba(255, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
 
 }
 
