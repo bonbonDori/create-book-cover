@@ -3,6 +3,8 @@ import { Canvas, IText } from 'fabric';
 import { useEffect, useRef } from 'react';
 import type { CoverConfig } from '../../../types/CoverConfig';
 
+import { hasProperty } from '../../../utils/fabric'
+
 interface Props { config: CoverConfig; }
 
 export default function CoverPreview({ config }: Props) {
@@ -42,10 +44,15 @@ export default function CoverPreview({ config }: Props) {
     const canvas = fabricRef.current;
     if (!canvas) return;
 
+    console.log('2222222', canvas.getObjects());
+
     // setBackgroundColor，直接传参
     canvas.set({ backgroundColor: config.bgColor });
 
-    const titleObj = canvas.getObjects().find(obj => obj.name === 'titleText') as IText;
+    const titleObj = canvas.getObjects().find(obj =>
+      hasProperty(obj, 'name') && obj.name === 'titleText'
+    ) as IText;
+
     if (titleObj) {
       titleObj.set({
         text: config.title,
